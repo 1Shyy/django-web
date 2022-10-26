@@ -1,0 +1,19 @@
+  <div class="card mb-3">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="media-body">
+                            {% if item.photo %}
+                                <img src="{{ item.photo.url }}" alt="">
+                            {% endif %}
+                            <h5 class="card-title">{{ item.title }} - {{ item.content }}</h5>
+                            <a href="#" class="btn btn-primary">Подробнее</a>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer text-muted">
+                    {{ item.created_at|date:"Y-m-d" }}
+                </div>
+            </div>

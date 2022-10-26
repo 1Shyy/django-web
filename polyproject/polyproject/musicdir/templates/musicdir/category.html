@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+        <h3>Категории</h3>
+        {% for item in categories %}
+            <a href="{% url 'category' item.pk %}" class="list-group-item list-group-item-action">{{ item.title }}</a>
+        {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+    <h3>Трек-лист ({{ category.title }})</h3>
+        {% for item in musicdir %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="media-body">
+{#                            {% if item.photo %}#}
+{#                                <img src="{{ item.photo.url }}" alt="">#}
+{#                            {% endif %}#}
+                            <h6 class="card-title">{{ item.title }} - {{ item.content }}</h6>
+
+
+                        </div>
+                    </div>
+
+                </div>
+{#                <div class="card-footer text-muted">#}
+{#                    {{ item.created_at|date:"Y-m-d" }}#}
+{#                </div>#}
+            </div>
+        {%  endfor %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
